@@ -1,6 +1,57 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2wu2p87tonc6"]
+[gd_scene format=3 uid="uid://d2wu2p87tonc6"]
 
+[ext_resource type="Script" uid="uid://c4s4guxpd4h7o" path="res://Player/player.gd" id="1_k53q1"]
 [ext_resource type="Texture2D" uid="uid://bn4pslqmkrq4m" path="res://Player/Head 333x333.png" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://bnngodqowil22" path="res://Player/Body 333.png" id="2_btcbx"]
+[ext_resource type="Texture2D" uid="uid://cvg6t0pp7qwc8" path="res://Player/lefty 111.png" id="3_gwnis"]
+[ext_resource type="Texture2D" uid="uid://mts83hf4qgdn" path="res://Player/Leg 175.png" id="4_gwnis"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhl08"]
+radius = 97.0
+height = 682.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtle1"]
+atlas = ExtResource("2_btcbx")
+region = Rect2(0, 0, 333, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od3ui"]
+atlas = ExtResource("2_btcbx")
+region = Rect2(333, 0, 333, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tjw"]
+atlas = ExtResource("2_btcbx")
+region = Rect2(666, 0, 333, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vf3"]
+atlas = ExtResource("2_btcbx")
+region = Rect2(999, 0, 333, 473)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apopc"]
+atlas = ExtResource("2_btcbx")
+region = Rect2(1332, 0, 333, 473)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5htga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od3ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apopc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ntmi"]
 atlas = ExtResource("1_l8h54")
@@ -45,9 +96,150 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(0, 0, 111, 279)
 
-[node name="Head" type="AnimatedSprite2D" parent="."]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(111, 0, 111, 279)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkpta"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(222, 0, 111, 279)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfmf2"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(333, 0, 111, 279)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pisgm"]
+atlas = ExtResource("3_gwnis")
+region = Rect2(444, 0, 111, 279)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1ygp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5o4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu6f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkpta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfmf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pisgm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
+atlas = ExtResource("4_gwnis")
+region = Rect2(0, 0, 175, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1ygp"]
+atlas = ExtResource("4_gwnis")
+region = Rect2(175, 0, 175, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o28un"]
+atlas = ExtResource("4_gwnis")
+region = Rect2(350, 0, 175, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
+atlas = ExtResource("4_gwnis")
+region = Rect2(525, 0, 175, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7emwf"]
+atlas = ExtResource("4_gwnis")
+region = Rect2(700, 0, 175, 366)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hshwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5htga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ygp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o28un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n471f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7emwf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1079292009]
+z_index = 1
+script = ExtResource("1_k53q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146612961]
+position = Vector2(0, -341)
+shape = SubResource("CapsuleShape2D_fhl08")
+
+[node name="Torso" type="AnimatedSprite2D" parent="." unique_id=863569093]
+position = Vector2(-6, -371)
+sprite_frames = SubResource("SpriteFrames_5htga")
+autoplay = "default"
+frame_progress = 0.104219295
+
+[node name="Head" type="AnimatedSprite2D" parent="Torso" unique_id=1415600551]
+position = Vector2(1, -115)
 sprite_frames = SubResource("SpriteFrames_vtle1")
 animation = &"new_animation"
-frame_progress = 0.98297006
+autoplay = "new_animation"
+frame_progress = 0.8236999
+offset = Vector2(-2, -95)
+
+[node name="Shoulders" type="Node2D" parent="Torso" unique_id=1039257906]
+
+[node name="Lefty" type="AnimatedSprite2D" parent="Torso/Shoulders" unique_id=1845552813]
+position = Vector2(-54.950043, -44.739513)
+rotation = 0.15160851
+sprite_frames = SubResource("SpriteFrames_b1ygp")
+autoplay = "default"
+frame_progress = 0.80720913
+offset = Vector2(-6.0196857, 73.49165)
+
+[node name="Righty" type="AnimatedSprite2D" parent="Torso/Shoulders" unique_id=143841284]
+position = Vector2(65.89032, -63.576263)
+rotation = -0.21324825
+sprite_frames = SubResource("SpriteFrames_b1ygp")
+autoplay = "default"
+frame_progress = 0.59498477
+offset = Vector2(-1.5696526, 73.91844)
+
+[node name="Waist" type="Node2D" parent="Torso" unique_id=930720304]
+
+[node name="Leg" type="AnimatedSprite2D" parent="Torso/Waist" unique_id=1822369683]
+position = Vector2(-34, 130)
+sprite_frames = SubResource("SpriteFrames_hshwv")
+autoplay = "default"
+frame_progress = 0.36247352
+offset = Vector2(4, 102)
+
+[node name="Reg" type="AnimatedSprite2D" parent="Torso/Waist" unique_id=1576243831]
+position = Vector2(49.823975, 123.36392)
+rotation = 0.120145395
+sprite_frames = SubResource("SpriteFrames_hshwv")
+autoplay = "default"
+frame_progress = 0.05148629
+offset = Vector2(3.8149033, 96.87723)
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1409962672]
+offset = Vector2(0, -900)
+zoom = Vector2(0.27, 0.27)
