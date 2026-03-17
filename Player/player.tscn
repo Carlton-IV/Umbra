@@ -241,5 +241,5 @@ offset = Vector2(3.8149033, 96.87723)
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1409962672]
-offset = Vector2(0, -900)
+offset = Vector2(0, -700)
 zoom = Vector2(0.27, 0.27)

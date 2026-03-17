@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dqycxpfwbrs64"]
+
+[ext_resource type="Shader" uid="uid://crsty2a8gp3nw" path="res://UI/colourInversion.gdshader" id="1_6dd3c"]
+[ext_resource type="Script" uid="uid://bgu3yt32l3gg0" path="res://UI/colour_inversion.gd" id="2_dhe1o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhe1o"]
+shader = ExtResource("1_6dd3c")
+shader_parameter/alpha = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa3ot"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="UI" type="CanvasLayer" unique_id=1863758613]
+script = ExtResource("2_dhe1o")
+
+[node name="ColourInversion" type="Panel" parent="." unique_id=919785070]
+material = SubResource("ShaderMaterial_dhe1o")
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 1155.0
+offset_bottom = 651.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pa3ot")
